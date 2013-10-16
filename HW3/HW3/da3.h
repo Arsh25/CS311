@@ -60,7 +60,8 @@ struct LLNode {                                                    // *
 // Do not alter the lines above                                    // *
 // *************************************************************** // *
 
-
+//Pre-Conditions: None
+//Post-Conditions: Returns the link list member of index is valid else throws out_of_range error
 template <typename T>
 T listItem(const LLNode<T> * head,
            int index)
@@ -85,13 +86,10 @@ T listItem(const LLNode<T> * head,
 	{
 		throw std::out_of_range(" out of range error, T list item");
 	}
-
-     //Dummy return, so that it compiles
-                 // Elminate this return statement!
-    // WRITE THIS!!!
 }
 
-
+//Pre-Conditions: Func must have operator () defined
+//Post-Conditions: returns true if any exception is caught 
 template <typename Func>
 void didItThrow(Func f,
                 bool & threw)
@@ -111,7 +109,8 @@ void didItThrow(Func f,
 
 }
 
-
+//Pre-Condition: None
+//Post-Condition: Prints the range to the ostream 
 template <typename FDIter>
 void printRange(FDIter first,
                 FDIter last,
@@ -122,17 +121,18 @@ void printRange(FDIter first,
 		theStream << *ii <<"\n";
 	}
 
-    // WRITE THIS!!!
 }
 
-
+//Pre-Conditions: None
+//Post-Condtions: returns true if two ranges are equal 
 template <typename FDIter>
 bool rangesEqual(FDIter first1,
                  FDIter last1,
                  FDIter first2)
 {
-    // WRITE THIS!!! (And use ONE function call and NOTHING ELSE.)
+
 	return std::equal( first1, last1, first2);
+
 }
 
 

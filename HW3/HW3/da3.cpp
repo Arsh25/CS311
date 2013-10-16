@@ -6,7 +6,8 @@
 
 #include "da3.h"
 
-
+//Pre-Conditions: 0 < n < size of (int)
+//Post-Conditions: Returns number of steps before n = 1. Will not throw 
 int collatz(int n)
 {
 	while (n != 1)
@@ -22,7 +23,5 @@ int collatz(int n)
 	}
 	}
 	return 0;
-      // Dummy return, so that it compiles
-               // Eliminate this return statement!
-    // WRITE THIS!!!
+  
 }
