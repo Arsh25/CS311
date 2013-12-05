@@ -77,6 +77,12 @@ void SList<T>::read( InputIterator first, InputIterator last)
 		value_type val = *first++;
 		_data = val;
 		_next = first + 1;
+
+		if(first == last)
+		{
+			_next = NULL;
+		}
+
 	}
 
 }
