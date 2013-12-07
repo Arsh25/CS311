@@ -125,6 +125,7 @@ void SList<T>::reverse()
                fromLast--;
             
         }
+}
 template<typename OutputIterator>
 template<class T>
 void SList<T>::write( OutputIterator dest)const
