@@ -8,17 +8,22 @@ class SLStack
 {
 
 public:
+
+typedef T value_type;
+
 SLStack();						// default ctor //
 SLStack(const SLStack &orig); 	// copy constructor //
 ~SLStack();						// destructor //
 
 bool empty();					// returns a bool indicating if Stack is empty //
+bool empty() const;
 SLStack & top();				// returns a reference to item on Top of Stack //
+SLStack & top() const;
 void push(value_type);			// moves inputted value to stack //
 void pop();						// gives back the top item on stack //
 
 private:
-SList * top; 					// pointer to stack
+SList<T> * ptr; 					// pointer to stack
 };
 
 template<class T>
@@ -47,9 +52,9 @@ else { return false; }				// something is there? return false //
 // pre-conditions: stack exists //
 // post-conditions: returns reference to what ever was at the top of the stack //
 template<class T>
-SLSTack & SLStack<T>::top()	
+SLStack<T> & SLStack<T>::top()
 {
-
+	return (value_type p);
 }
 
 // pre-conditions: none
