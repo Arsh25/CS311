@@ -96,7 +96,18 @@ void SList<T>::reverse()
 		std::iter_swap(  
 	*/
 }
+template<typename OutputIterator>
+template<class T>
+void SList<T>::write( OutputIterator dest)const
+{
 
-
+	for (auto ii=_next;_next!=NULL;_next++)
+	{
+		value_type val;
+		val = _data;
+		*dest++ = val;
+		//++_next;
+	}
+}
 #endif 
 
