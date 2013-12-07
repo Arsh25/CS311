@@ -11,9 +11,10 @@ public:
 
 typedef T value_type;
 
-SLStack();						// default ctor //
-SLStack(const SLStack &orig); 	// copy constructor //
-~SLStack();						// destructor //
+SLStack();						    // default ctor //
+SLStack(const SLStack &orig);       // copy constructor //
+SLStack &operator=(SLStack rhs);	// copy Assignment //
+~SLStack();						    // destructor //
 
 bool empty();					// returns a bool indicating if Stack is empty //
 bool empty() const;
@@ -29,7 +30,7 @@ SList<T> * ptr; 					// pointer to stack
 template<class T>
 SLStack<T>::SLStack()
 {
-top = 0;
+ptr = NULL;
 }
 
 template<class T>
@@ -38,6 +39,12 @@ SLStack<T>::SLStack(const SLStack &orig)
 }
 
 template<class T>
+SLStack<T> &SLStack<T>::operator =(SLStack<T> rhs)
+{
+	std::swap(rhs.ptr,ptr);
+	return *this;
+}
+template<class T>
 SLStack<T>::~SLStack()
 {
 }
@@ -45,7 +52,7 @@ SLStack<T>::~SLStack()
 template<class T>
 bool SLStack<T>::empty()
 {
-if (top == 0) { return true; }		// nothing on the stack? return true //
+if (ptr == NULL) { return true; }		// nothing on the stack? return true //
 else { return false; }				// something is there? return false //
 }
 
@@ -54,7 +61,8 @@ else { return false; }				// something is there? return false //
 template<class T>
 SLStack<T> & SLStack<T>::top()
 {
-	return (value_type p);
+	
+	return ( ptr);
 }
 
 // pre-conditions: none

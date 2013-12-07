@@ -42,14 +42,14 @@ template <class T>
 SList<T>::SList( const SList &orig)		//copy constructor//
 {
 	_data = orig._data;
-	_next = orig->_next;
+	_next = orig._next;
 
 }
 
 template <class T>
 SList<T>& SList<T>::operator=(SList<T> rhs)	// copy assignment //
 {
-	std::swap(rhs->_next,_next);
+	std::swap(rhs._next,_next);
 	std::swap(rhs._data,_data);
 
 	return *this;
@@ -70,13 +70,14 @@ template <typename InputIterator>
 
 void SList<T>::read( InputIterator first, InputIterator last)
 {
-	delete _data;
-	_next = NULL:
+//	delete _data;
+	_next = NULL;
 	while(first != last)
 	{
 		value_type val = *first++;
 		_data = val;
-		_next = first + 1;
+		InputIterator temp = first++;
+		_next = temp;
 
 		if(first == last)
 		{
