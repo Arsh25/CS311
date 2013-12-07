@@ -1,3 +1,4 @@
+
 #ifndef SLIST_H_
 #define SLIST_H_
 
@@ -90,39 +91,23 @@ void SList<T>::read( InputIterator first, InputIterator last)
 template<class T>
 void SList<T>::reverse()
 {
-	InputIterator fromFirst;
-	fromFirst = _next;				// fromFirst now points to the first item
-
-	InputIterator fromLast;
-	for (int i = 0; i < Slist.size()-1; i++)	// goes through the loop until it reaches the last item //
-	{	
-							// points _next to the next item //
-		if (_next++ == NULL)			// if the next item points to NULL we should be at the end //
-		{
-			fromLast = _next;		// fromLast now points to the last item //
-		}
-		++_next;				// points _next to the next item //
-	}
-	
-	int alternate = 1;				// used to alternate increments and decrements //
-	while (fromFirst != fromLast)			// while not equal, will leave out the middle item //
+	/*for(int i = 0; i < (Slist.size()/2); i++)
 	{
-		if (alternate == 1)
-		{
-			std::swap_Iter(fromFirst, fromLast);
-			fromLast++;				// because last now points at the start we increment //
-			fromFirst--;				// because first now points to the end we decrement //
-			alternate = 2;				// alternate //
-		}
-		if (alternate == 2)
-		{
-			std::swap_Iter(fromFirst, fromLast);
-			fromLast--;				// last now points to the end, we decrement //
-			fromFirst++;				// first now points to the start, we increment //
-			alternate = 1;				// alternate //
-		}
+		std::iter_swap(  
+	*/
+}
+template<typename OutputIterator>
+template<class T>
+void SList<T>::write( OutputIterator dest)const
+{
+
+	for (auto ii=_next;_next!=NULL;_next++)
+	{
+		value_type val;
+		val = _data;
+		*dest++ = val;
+		//++_next;
 	}
 }
-
 #endif 
 
