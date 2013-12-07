@@ -108,7 +108,7 @@ void SList<T>::reverse()
         fromFirst = _next;                                // fromFirst now points to the first item
 
         iterator fromLast;
-        for (int i = 0; i < Slist.size()-1; i++)        // goes through the loop until it reaches the last item //
+		for (int i = 0; i < this.size()-1; i++)        // goes through the loop until it reaches the last item //
         {        
                                                         // points _next to the next item //
                 if (_next++ == NULL)                        // if the next item points to NULL we should be at the end //
